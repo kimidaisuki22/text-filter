@@ -8,7 +8,8 @@ add_executable(main main.cpp)
 
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(main PRIVATE fmt::fmt)
-
+find_package(cy CONFIG REQUIRED)
+target_link_libraries(main PRIVATE cy::cy)
 enable_testing()
 add_subdirectory(test)
 
@@ -23,4 +24,3 @@ set(CPACK_PACKAGE_FILE_NAME update_server_package)
 include(CPack)
 
 include(GNUInstallDirs)
-
